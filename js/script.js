@@ -95,7 +95,7 @@ async function getPage(page) {
     if (first.value == '') sel('.error').innerHTML = 'Please type film title !!!'
     else {
         try {
-            await fetch(`http://www.omdbapi.com/?s=${first.value}&page=${page}&apikey=eeb56d4b`)
+            await fetch(`https://www.omdbapi.com/?s=${first.value}&page=${page}&apikey=eeb56d4b`)
                 .then(resp => resp.json())
                 .then(data => {
                     for (let i = 0; i < data.Search.length; i++) {
@@ -128,7 +128,7 @@ sel('#more-submit').addEventListener('click', () => {
 })
 
 async function moreClick(obj) {
-    await fetch(`http://www.omdbapi.com/?i=${obj.id}&plot=full&apikey=eeb56d4b`)
+    await fetch(`https://www.omdbapi.com/?i=${obj.id}&plot=full&apikey=eeb56d4b`)
         .then(resp => resp.json())
         .then(data => {
             try {
